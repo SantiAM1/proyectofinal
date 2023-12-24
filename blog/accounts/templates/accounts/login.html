@@ -1,0 +1,50 @@
+{% extends 'accounts/base.html' %}
+
+{% block contenidomain %}
+<section class="">
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+    <div class="container">
+      <div class="row gx-lg-5 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h1 class="my-5 display-3 fw-bold ls-tight">
+            Proyecto final <br />
+            <span class="text-primary">CoderHouse</span>
+          </h1>
+          <div style="text-align: center; margin-top: 10px;">
+            <a href="{% url 'pages:pagelist' %}" class="btn btn-secondary btn-block mb-4">Volver</a>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card">
+            <div class="card-body py-5 px-md-5">
+              <form method="post" action="{% url 'accounts:login' %}">
+                {% csrf_token %}
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="form-outline mb-2">
+                  <label class="form-label" for="{{ form.username.id_for_label }}">Username</label>
+                  <br>
+                  {{ form.username }}
+                </div>
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="{{ form.password.id_for_label }}">Contraseña</label>
+                    {{ form.password }}
+                </div>
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">
+                    Iniciar Sesion
+                </button>
+                <!-- Register buttons -->
+                <div class="text-center">
+                  <p>¿Aun no estas registrado?</p>
+                  <a href="{% url 'accounts:signup' %}" class="btn btn-primary btn-block mb-4">Registrate</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock contenidomain %}

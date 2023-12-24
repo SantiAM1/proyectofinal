@@ -1,0 +1,66 @@
+<section class="">
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+    <div class="container">
+      <div class="row gx-lg-5 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h1 class="my-5 display-3 fw-bold ls-tight">
+            Proyecto final <br />
+            <span class="text-primary">CoderHouse</span>
+          </h1>
+          <div style="text-align: center; margin-top: 10px;">
+            <a href="{% url 'pages:plataforma' %}" class="btn btn-secondary btn-block mb-4">Volver a la Plataforma!</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card">
+            <div class="card-body py-5 px-md-5">
+              <form method="post" action="{% url 'accounts:user_edit' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="form-outline mb-2">
+                  <label class="form-label">Username: {{ usuario }}</label>
+                </div>
+                <div class="row">
+                    <div class="col-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="{{ form.first_name.id_for_label }}">Nombre</label>{{form.first_name}}
+                        </div>
+                    </div>
+                    <div class="col-6 mb-4">
+                        <div class="form-outline">
+                            <label class="form-label" for="{{ form.last_name.id_for_label }}">Apellido</label>{{ form.last_name }}
+                        </div>
+                    </div>
+                </div>
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="{{ form.email.id_for_label }}">Email</label>
+                    {{ form.email }}
+                </div>
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="{{ form.password1.id_for_label }}">Contraseña</label>
+                    {{ form.password1 }}
+                </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="{{ form.password2.id_for_label }}">Repetir Contraseña</label>
+                    {{ form.password2 }}
+                </div>
+                <!-- Avatar input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="{{ form.avatar.id_for_label }}">Avatar</label>
+                  {{ form.avatar }}
+              </div>
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">
+                    Editar
+                </button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
