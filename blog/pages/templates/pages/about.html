@@ -1,0 +1,18 @@
+{% extends 'pages/base.html' %}
+
+{% block header %}
+    {% include 'pages/header.html' with image='pages/assets/img/about-bg.jpg' title="Nosotros" subtitle="..." %}
+{% endblock header %}
+
+{% block contenidomain %}
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <p>Nosotros somos un equipo de desarollo de una sola persona: Santiago Aguirre Moretto, este es nuestro primer proyecto final en CoderHouse</p>
+                    <p>Aprendimos Python, Django, un poco de HTML, y aprendimos a usar Bootstrap</p>
+                </div>
+            </div>
+        </div>
+    </article>
+{% endblock contenidomain %}

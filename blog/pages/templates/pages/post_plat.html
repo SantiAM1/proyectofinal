@@ -1,0 +1,12 @@
+<div class="post-preview">
+    <p>
+        <h2 class="post-title">{{ titulo }}</h2>
+    </p>
+    <p class="post-meta">
+        Posteado por
+        {{page.autor}}
+        on {{ fecha }}
+    </p>
+    <a href="{% url 'pages:deletepost' page.id %}" class="btn btn-danger">Eliminar</a>
+    <a href="{% url 'pages:updatepost' page.id %}" class="btn btn-primary">Editar</a>
+</div>

@@ -1,0 +1,12 @@
+{% extends 'pages/plataforma.html' %}
+
+{% block contenidomain %}
+<div class="container-fluid px-4 py-4">
+    <h2>Crear Nuevo Post</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+</div>
+{% endblock contenidomain %}

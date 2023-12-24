@@ -1,0 +1,11 @@
+<div class="post-preview">
+    <a href="{% url 'pages:postdetail' page.id %}">
+        <h2 class="post-title">{{ titulo }}</h2>
+        <h3 class="post-subtitle">{{ page.subtitulo }}</h3>
+    </a>
+    <p class="post-meta">
+        Posteado por
+        <a href="#!">{{page.autor}}</a>
+        on {{ fecha }}
+    </p>
+</div>

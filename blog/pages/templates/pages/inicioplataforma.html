@@ -1,0 +1,10 @@
+{% extends 'pages/plataforma.html' %}
+
+{% block contenidomain %}
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Bienvenido usuario: {{request.user}} </h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Esta el nuestra Plataforma Blog-CH</li>
+        </ol>
+    </div>
+{% endblock contenidomain %}

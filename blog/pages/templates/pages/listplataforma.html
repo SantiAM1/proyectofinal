@@ -1,0 +1,26 @@
+{% extends 'pages/plataforma.html' %}
+
+{% block contenidomain %}
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Lista de POST</h1>
+        {% if listapages %}
+            {% for page in listapages %}
+                {% if page.autor == autor %}
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    {% include 'pages/post_plat.html' with titulo=page.titulo fecha=page.fecha %}
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                {% elif ifadmin == "admin" %}
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    {% include 'pages/post_plat.html' with titulo=page.titulo fecha=page.fecha %}
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <h2>No se encontraros Post realizados :/</h2>
+        {% endif %}
+    </div>
+{% endblock contenidomain %}
